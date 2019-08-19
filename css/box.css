@@ -1,0 +1,94 @@
+#login-box {
+    background-color:#a0969670;
+    width:380px;
+    height:260px;
+    margin:140px auto 0px;
+    border-radius:5px;
+}
+
+#login-box-interno {
+    width: 360px;
+    height:240px;
+    background-color:white;
+    position:absolute;
+    margin:10px;
+    border-radius:5px;
+    box-shadow:0px 0px 5px black;
+    overflow:hidden;
+}
+
+#login-box-label {
+    height:45px;
+    text-align:center;
+    font:bold 14px/45px sans-serif;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom:1px solid #bfc3c5;
+    box-shadow:1px 0px 3px black;
+    color:#555555;
+    text-shadow:1px 0px 1px white;
+}
+
+#esqueceu-senha-box {
+    background-color:#a0969670;
+    width:380px;
+    height:195px;
+    margin:140px auto 0px;
+    border-radius:5px;
+}
+
+
+
+#esqueceu-senha-box-interno {
+    width: 360px;
+    height: 175px;
+    background-color:white;
+    position:absolute;
+    margin:10px;
+    border-radius:5px;
+    box-shadow:0px 0px 5px black;
+    overflow:hidden;
+}
+
+#esqueceu-senha-box-label {
+    height:45px;
+    text-align:center;
+    font:bold 14px/45px sans-serif;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom:1px solid #bfc3c5;
+    box-shadow:1px 0px 3px black;
+    color:#555555;
+    text-shadow:1px 0px 1px white;
+}
+
+#cadastro-box {
+    background-color:#a0969670;
+    width:380px;
+    height:320px;
+    margin:140px auto 0px;
+    border-radius:5px;
+}
+
+#cadastro-box-interno {
+    width: 360px;
+    height: 300px;
+    background-color:white;
+    position:absolute;
+    margin:10px;
+    border-radius:5px;
+    box-shadow:0px 0px 5px black;
+    overflow:hidden;
+}
+
+#cadastro-box-label {
+    height:45px;
+    text-align:center;
+    font:bold 14px/45px sans-serif;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom:1px solid #bfc3c5;
+    box-shadow:1px 0px 3px black;
+    color:#555555;
+    text-shadow:1px 0px 1px white;
+}

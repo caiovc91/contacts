@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../sample/scripts/database.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Usuarios</title>
+        <link rel="stylesheet" href="../sample/css/styles.css">
+        <link rel="stylesheet" href="../sample/css/menu.css">
+        <link rel="stylesheet" href="../sample/css/botoes.css">
+    </head>
+
+    <body>
+        <nav id="menu">
+            <ul id="menusUsuarios">
+            
+            </ul>
+        </nav>
+        <br/>
+        <br/>
+        <br/>
+        <div id="login-box">
+            <div id="login-box-interno">
+                <ul id="usuariosTela">
+                    
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script>
+                    var ul = document.getElementById('menuContatos')
+            function renderMenus(){
+                ul.innerHTML = ''
+                criaMenu('Sair', 'index.html')
+                criaMenu('Cadastrar Contato', 'cadastro.html')
+                criaMenu('Lista de contatos', 'ocorrencias.html')
+            }
+            function criaMenu(title, link){
+                var newLi = document.createElement('li')
+                var linkMenu = document.createTextNode(title)
+                var linkElement = document.createElement('a')
+                linkElement.setAttribute('href', link)
+                linkElement.appendChild(linkMenu)
+                newLi.appendChild(linkElement)
+                ul.appendChild(newLi)
+            }
+            function getContacts(){
+                var url
+                    url = 'http://localhost:8080/listContacts'
+                axios.get(url)
+                    .then(function(response){
+                        var stringfy = JSON.stringify(response.data)
+                        var obj = JSON.parse(stringfy)
+                        // Captura a referência da tabela com id “minhaTabela”
+                        var table = document.getElementById("Users");
+                        // Captura a quantidade de linhas já existentes na tabela
+                        var numOfRows = table.rows.length;
+                        // Captura a quantidade de colunas da última linha da tabela
+                        var numOfCols = table.rows[numOfRows-1].cells.length;
+                        for(var i = 0 ; i < obj.length; i++){
+                            // Insere uma linha no fim da tabela.
+                            var newRow = table.insertRow(numOfRows);
+                            
+                            newCell = newRow.insertCell(0);
+                            newCell.innerHTML = '<a href="#" onclick="deleteContact()">'+obj[i]['_id']+'</a>';
+                            newCell = newRow.insertCell(1);
+                            newCell.innerHTML = obj[i]['name'];
+                            newCell = newRow.insertCell(2);
+                            newCell.innerHTML = obj[i]['email'];
+                            newCell = newRow.insertCell(3);
+                            newCell.innerHTML = obj[i]['phone'];
+                            newCell = newRow.insertCell(4);
+                        }
+                    })
+                    .catch(function(reject){
+                        alert(reject)
+                    })
+            }
+            getContacts()
+            renderMenus()
+    </script>
+</html>
